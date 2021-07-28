@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1625820894 source:d:\project\ulya\cppless\less_3c\common.c
+	"common.h"
+
+1625819435 d:\project\ulya\cppless\less_3c\common.h
+	"stdint.h"
+
+1625820894 source:d:\project\ulya\cppless\less_3c\main.c
+	<stdio.h>
+	<stdlib.h>
+	"common.h"
+
