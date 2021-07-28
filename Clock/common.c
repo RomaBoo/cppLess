@@ -1,5 +1,4 @@
 #include "common.h"
-#include <avr/io.h>
 
 
 
@@ -25,9 +24,17 @@ void GPIO_Init()
 void HAL_GPIO_WritePin(GPIO_TypeDef *GPIOx, uint8_t GPIO_Pin, GPIO_PinState PinState)
 {
     if(PinState == GPIO_PIN_SET)
-        *GPIOx->PORTR |= 1 << GPIO_Pin;
+        *GPIOx->PORTR |= GPIO_Pin;
     else
-        *GPIOx->PORTR &= ~(1 << GPIO_Pin);
+        *GPIOx->PORTR &= ~GPIO_Pin;
+}
+
+void HAL_GPIO_Direct(GPIO_TypeDef *GPIOx, uint8_t GPIO_Pin, GPIO_PinDirect PinDir)
+{
+    if(PinDir == GPIO_PIN_OUT)
+        *GPIOx->DDRR |= GPIO_Pin;
+    else
+        *GPIOx->DDRR &= ~GPIO_Pin;
 }
 
 void f(GPIO_TypeDef *GPIOx)

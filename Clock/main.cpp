@@ -8,8 +8,20 @@
 
 int main(void)
 {
-    HAL_GPIO_WritePin(&GPIOB, 2, GPIO_PIN_SET);
-    f(&GPIOB);
+    GPIO_Init();
+
+    HAL_GPIO_Direct(&GPIOB, GPIO_PIN_5, GPIO_PIN_OUT);
+    HAL_GPIO_Direct(&GPIOD, GPIO_PIN_4|GPIO_PIN_5, GPIO_PIN_OUT);
+//    HAL_GPIO_Direct(&GPIOD, GPIO_PIN_4, GPIO_PIN_OUT);
+
+//    HAL_GPIO_WritePin(&GPIOB, 0, GPIO_PIN_RESET);
+//    HAL_GPIO_WritePin(&GPIOB, 3, GPIO_PIN_RESET);
+//    HAL_GPIO_WritePin(&GPIOB, 4, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(&GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+
+    HAL_GPIO_WritePin(&GPIOD, GPIO_PIN_4, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(&GPIOD, GPIO_PIN_5, GPIO_PIN_RESET);
+//    f(&GPIOB);
 //    f(&PORTB);
 
 

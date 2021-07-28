@@ -17,7 +17,7 @@ rem **************************************
 rem вставить название HEX файла
 rem **************************************
 
-set FLASHFILE=GPIO_1
+set FLASHFILE=Clock
 set DIRFLASHFILE=d:\Project\ulya\cppLess\Clock\bin\Debug
 rem set DIRPROG=d:\Program Files\GCC\utils\avrdude
 
@@ -54,8 +54,7 @@ echo Проверка подключения...
 rem 
 %AVRDUDECMD% -C %CONF_FILE% -c %PROGRMER% -P %port% -p %DEVICE% -B15
 rem %AVRDUDECMD% -c ft232r -P ft0 -p %DEVICE% -B38400
-rem 
-pause
+rem pause
 IF ERRORLEVEL 1	(
 		GOTO WRONG_DEVICE
 ) else (
@@ -84,6 +83,7 @@ cls
 rem robocopy "%DIRFLASHFILE%" "%DIRPROG%" %FLASHFILE%.hex
 rem pause
 
+rem %AVRDUDECMD% -C %CONF_FILE% -c %PROGRMER% -P %port% -p %DEVICE% -B15 -U hfuse:w:0xDF:m -U lfuse:w:0xEF:m -U efuse:w:0xFE:m
 %AVRDUDECMD% -C %CONF_FILE% -c %PROGRMER% -P %port% -p %DEVICE% -B15 -U flash:w:"%DIRFLASHFILE%\%FLASHFILE%.hex":i
 rem  -b57600
 rem %AVRDUDECMD% -c ft232r -P ft0 -p %DEVICE% -U hfuse:w:0xDF:m -B57600

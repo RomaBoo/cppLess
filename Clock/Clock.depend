@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1625824000 source:d:\project\ulya\cppless\clock\common.c
+1627470490 source:d:\project\ulya\cppless\clock\common.c
 	"common.h"
 	<avr/io.h>
 
-1625824643 d:\project\ulya\cppless\clock\common.h
+1627471048 d:\project\ulya\cppless\clock\common.h
+	<avr/io.h>
 	"stdint.h"
 
-1625824179 source:d:\project\ulya\cppless\clock\main.cpp
+1627470799 source:d:\project\ulya\cppless\clock\main.cpp
 	<avr/io.h>
 	"common.h"
 
